@@ -1,0 +1,19 @@
+/* 1. Directivas de Tailwind (obligatorias) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 2. Estilos Base Globales (Anti-fatiga visual) */
+@layer base {
+  body {
+    margin: 0;
+    padding: 0;
+    /* Fondo gris azulado muy suave y texto gris oscuro */
+    @apply bg-slate-50 text-dark antialiased;
+  }
+  
+  /* Opcional: Títulos siempre oscuros y con peso */
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-dark font-bold;
+  }
+}
