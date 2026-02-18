@@ -129,6 +129,12 @@ export const TripDetailPage = () => {
 								</span>
 								<p className="font-bold">{trip.semi}</p>
 							</div>
+							<div>
+								<span className="text-xs font-bold text-slate-400 uppercase">
+									Monto Facturado
+								</span>
+								<p className="font-bold">{trip.amount}</p>
+							</div>
 							{trip.containerNumber && (
 								<div>
 									<span className="text-xs font-bold text-slate-400 uppercase">

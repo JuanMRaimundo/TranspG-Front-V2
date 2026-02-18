@@ -24,7 +24,7 @@ export const tripService = {
 			{
 				method: "GET",
 				headers: getHeaders(),
-			},
+			}
 		);
 		if (!response.ok) {
 			const errorData = await response.json();
@@ -152,7 +152,9 @@ export const tripService = {
 		const url = window.URL.createObjectURL(blob);
 		const a = document.createElement("a");
 		a.href = url;
-		a.download = `Reporte_Viajes_${new Date().toISOString().split("T")[0]}.xlsx`;
+		a.download = `Reporte_Viajes_${
+			new Date().toISOString().split("T")[0]
+		}.xlsx`;
 		document.body.appendChild(a);
 		a.click();
 		a.remove();
@@ -160,9 +162,9 @@ export const tripService = {
 	},
 
 	deleteTrip: async (tripId) => {
-		const response = await fetch(`${API_URL}/trips/${tripId}`, {
+		const response = await fetch(`${API_URL}/trips/${tripId}/cancel`, {
 			// Ojo: DELETE suele ser /trips/:id
-			method: "DELETE",
+			method: "PATCH",
 			headers: getHeaders(),
 		});
 		if (!response.ok) throw new Error("Error al eliminar");
